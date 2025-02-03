@@ -9,7 +9,9 @@ import './style.css';
 //import './topics/07-import-export';
 //import './topics/08-classes';
 //import './topics/09-generics';
-import './topics/10-decorators';
+//import './topics/10-decorators';
+import './topics/11-optional-chaining';
+
 
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
