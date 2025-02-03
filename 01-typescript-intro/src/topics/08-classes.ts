@@ -3,12 +3,13 @@ export class Person {
     private address: string; */
 
     constructor(
-        public name: string, 
+        public firstName: string, 
+        public lastName: string, 
         private address: string = 'No address'
     ) {}
 }
 
-export class Hero extends Person {
+/* export class Hero extends Person {
 
     constructor(
         public alterEgo: string,
@@ -17,8 +18,21 @@ export class Hero extends Person {
     ) {
         super(realName, 'New York');
     }
+} */
+
+export class Hero {
+
+    
+
+    constructor(
+        public alterEgo: string,
+        public age: number,
+        public realName: string,
+        public person: Person
+    ) {}
 }
 
-const ironman = new Hero('IronMan',45,'Tony Stark');
+const person = new Person('Tony', 'Stark', 'New York');
+const ironman = new Hero('IronMan',45,'Tony Stark', person);
 
 console.log(ironman);
