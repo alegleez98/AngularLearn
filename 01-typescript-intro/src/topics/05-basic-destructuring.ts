@@ -25,9 +25,12 @@ const song = 'Un baile Inolvidable'
 const {song: anotherSong, songDuration: duration, details} = audioPlayer;
 const {author} = details;
 
-console.log('Song: ', anotherSong);
+/* console.log('Song: ', anotherSong);
 console.log('Duration: ', duration);
-console.log('Author: ', author);
+console.log('Author: ', author); */
 
+const dbz: string[] = ['Goku', 'Vegeta', 'Trunks']; //Si quitamos Trunks, tendrá el valor 'Not Found'
+const [, , trunks = 'Not found'] = dbz //Ignoramos los anteriores porque solo queremos a Trunks
+console.log(`Personaje 3:${trunks}`);
 
 export {};
