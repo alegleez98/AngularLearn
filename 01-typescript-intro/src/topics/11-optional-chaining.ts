@@ -12,9 +12,12 @@ const passenger2: Passenger = {
     children: ['Fernando', 'Agustina']
 }
 
-const printChildren = ( passenger: Passenger) => {
-    const howManyChildren = passenger.children?.length || 0;    // el ? es el optional chaining
-    console.log(passenger.name, howManyChildren);          // o encadenamiento opcional
+const printChildren = ( passenger: Passenger): number => {
+    const howManyChildren = passenger.children?.length || 0;    // el ? es el optional chaining o encadenamiento opcional
+    //const howManyChildren = passenger.children!.length || 0;    // el ! nos asegura que tendra valor, su nombre not null assertion operator
+
+    console.log(passenger.name, howManyChildren);    
+    return howManyChildren;   
 }
 
 printChildren(passenger2);
