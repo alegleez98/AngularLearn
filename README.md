@@ -13,6 +13,7 @@ Hola, estos son los apuntes y código sobre el curso de Angular de fernando Herr
 
 ## Sección 3: Bases de TypeScript
 Este es un breve listado de los temas fundamentales:
+
     - Introducción a TypeScript
     - Tipos básicos
     - Objetos, arreglos e interfaces
@@ -26,6 +27,7 @@ Este es un breve listado de los temas fundamentales:
 
 ## Sección 4: Angular
 Este es un breve listado de los temas fundamentales:
+
     - Crear proyectos de Angular
     - Explicar cada archivo y directorio de un proyecto
     - Componentes
@@ -38,6 +40,7 @@ Este es un breve listado de los temas fundamentales:
 ## Sección 5: Expandir Bases de Angular
 ¿Qué veremos en esta sección?
 Una vez sentadas las bases de Angular en la sección anterior, vamos a seguir expandiéndolas aquí, con los siguientes temas:
+
     - Profundizar un poco más en los módulos
     - FormsModule
     - ngModel
