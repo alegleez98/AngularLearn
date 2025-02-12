@@ -49,3 +49,16 @@ Una vez sentadas las bases de Angular en la sección anterior, vamos a seguir ex
     - Servicios
     - Métodos en servicios
     - Depuraciones
+
+## Sección 6: Despliegues a producción
+Este es un breve listado de los temas fundamentales:
+
+    - Generar build de producción
+    - Desplegarlo rápidamente
+    - Netlify
+    - GitHub Pages
+    - npm Scripts para automatizar el proceso
+
+Aquí aprenderemos como generar el build de producción de nuestra aplicación y la desplegaremos en la web.
+
+El proceso de despliegue en otros servidores es virtualmente el mismo, tomar nuestra carpeta DIST (que contiene la aplicación con archivos HTML, CSS y JS) y desplegarla mediante FTP (preferiblemente sFTP) en el hosting deseado.
