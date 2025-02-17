@@ -5,8 +5,15 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:href": "ng build --base-href ./",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:github": "npm run build:href && npm run reorder:dist && npm run delete:docs && npm run copy:dist",
+    "reorder:dist": "npm run copy:browsercontent && npm run delete:browser",
+    "delete:docs": "del docs",
+    "copy:browsercontent": "copyfiles dist/bases/browser/* dist/bases -f",
+    "delete:browser": "del-cli dist/bases/browser",
+    "copy:dist": "copyfiles dist/bases/* ./../docs -f"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +36,8 @@
     "@angular/cli": "^19.1.5",
     "@angular/compiler-cli": "^19.1.0",
     "@types/jasmine": "~5.1.0",
+    "copyfiles": "^2.4.1",
+    "del-cli": "^6.0.0",
     "jasmine-core": "~5.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
