@@ -54,7 +54,7 @@ Una vez sentadas las bases de Angular en la sección anterior, vamos a seguir ex
 Este es un breve listado de los temas fundamentales:
 
     - Generar build de producción
-    - Desplegarlo rápidamente
+    - Desplegarlo rápidamente: Para desplegarlo con http-server utilizar comando -> http-server -o /index.html, estar en la carpeta browser dentro de dist/bases 
     - Netlify
     - GitHub Pages
     - npm Scripts para automatizar el proceso
