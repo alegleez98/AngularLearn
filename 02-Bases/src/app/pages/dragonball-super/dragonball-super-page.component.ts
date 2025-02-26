@@ -1,17 +1,13 @@
 //import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
-
-interface Character {
-  id: number,
-  name: string,
-  power: number;
-}
+import { CharacterListComponent } from "../../components/dragonball/character-list/character-list.component";
+import { Character } from '../../interfaces/character.interface';
 
 @Component({
   selector: 'app-dragonball-super',
   imports: [
-    //NgClass
-  ],
+    CharacterListComponent
+],
   templateUrl: './dragonball-super-page.component.html',
   styleUrl: './dragonball-super-page.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23,7 +19,7 @@ export class DragonballSuperPageComponent {
 
   characters = signal<Character[]>([
     {id:1, name: 'Goku', power: 9001},
-    // {id:2, name: 'Vegetta', power: 8000},
+    {id:2, name: 'Vegetta', power: 8000},
     // {id:3, name: 'Piccolo', power: 3000},
     // {id:4, name: 'Yamcha', power: 500}
   ]);
