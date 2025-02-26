@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+//import { NgClass } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 
 interface Character {
   id: number,
@@ -8,7 +9,9 @@ interface Character {
 
 @Component({
   selector: 'app-dragonball',
-  imports: [],
+  imports: [
+    //NgClass
+  ],
   templateUrl: './dragonball-page.component.html',
   styleUrl: './dragonball-page.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,4 +23,10 @@ export class DragonballPageComponent {
     {id:1, name: 'Vegetta', power: 8000},
     {id:1, name: 'Krillin', power: 3000}
   ]);
+
+  // powerClasses = computed(() => {
+  //   return {
+  //   'text-danger': true
+  //   }
+  // })
 }

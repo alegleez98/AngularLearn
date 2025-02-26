@@ -17,7 +17,13 @@
         <li>
           <span>{{ idx + 1 }} - </span>
           <span>{{ character.name }}</span>
-          <span class="text-danger"> ({{ character.power }})</span>
+          <!-- <strong [ngClass]="powerClasses()">
+            ({{ character.power }})
+          </strong> -->
+          <strong
+            [class.text-danger]="character.power > 9000"
+            [class.text-primary]="character.power < 9000"
+          > ({{ character.power }}) </strong>
         </li>
       }
     </ul>
