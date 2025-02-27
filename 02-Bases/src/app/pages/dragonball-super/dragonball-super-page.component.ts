@@ -23,6 +23,11 @@ export class DragonballSuperPageComponent {
     // {id:4, name: 'Yamcha', power: 500}
   ]);
 
+  addCharacter(newCharacter: Character) {
+    this.characters.update( (list) => [...list, newCharacter])
+  }
+
+
   // powerClasses = computed(() => {
   //   return {
   //   'text-danger': true
