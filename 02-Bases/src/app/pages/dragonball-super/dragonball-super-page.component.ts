@@ -1,8 +1,9 @@
 //import { NgClass } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { CharacterListComponent } from "../../components/dragonball/character-list/character-list.component";
 import { Character } from '../../interfaces/character.interface';
 import { CharacterAddComponent } from "../../components/dragonball/character-add/character-add.component";
+import { DragonballService } from '../../services/dragonball.service';
 
 @Component({
   selector: 'app-dragonball-super',
@@ -16,21 +17,16 @@ import { CharacterAddComponent } from "../../components/dragonball/character-add
 })
 export class DragonballSuperPageComponent {
 
-  characters = signal<Character[]>([
-    {id:1, name: 'Goku', power: 9001},
-    {id:2, name: 'Vegetta', power: 8000},
-    // {id:3, name: 'Piccolo', power: 3000},
-    // {id:4, name: 'Yamcha', power: 500}
-  ]);
+  // FORMA ANTIGUA
+  // constructor(
+  //   public dragonballService: DragonballService
+  // ) {
 
-  addCharacter(newCharacter: Character) {
-    this.characters.update( (list) => [...list, newCharacter])
-  }
+  // }
+
+  //FORMA NUEVA INYECTAR DEPENDENCIAS
+  public dragonballService = inject(DragonballService);
 
 
-  // powerClasses = computed(() => {
-  //   return {
-  //   'text-danger': true
-  //   }
-  // })
+
 }
