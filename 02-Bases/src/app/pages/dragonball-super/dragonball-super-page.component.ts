@@ -27,6 +27,4 @@ export class DragonballSuperPageComponent {
   //FORMA NUEVA INYECTAR DEPENDENCIAS
   public dragonballService = inject(DragonballService);
 
-
-
 }
