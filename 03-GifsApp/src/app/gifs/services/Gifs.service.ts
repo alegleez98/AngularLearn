@@ -33,4 +33,20 @@ export class GifsService {
     });
   }
 
+  searchGifs(query: string) {
+    let gifsSearch = signal<Gif[]>([]);
+    this.http.get<GiphyResponse>(`${environment.giphyURL}/gifs/search`, {
+      params: {
+        api_key: environment.giphyApiKeys,
+        q: query,
+        limit: 20,
+      }
+    }).subscribe( (resp) => {
+      console.log(resp);
+      const gifs = GifMapper.mapGiphyItemsToGifArray(resp.data);
+      gifsSearch.set(gifs);
+    });
+    return gifsSearch;
+  }
+
 }
