@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, input, InputSignal } from '@angular/core';
+import { Gif } from 'src/app/gifs/interfaces/Gif';
 
 @Component({
   selector: 'gifs-list-item',
@@ -8,5 +9,5 @@ import { ChangeDetectionStrategy, Component, input, InputSignal } from '@angular
 })
 export class GifsListItemComponent {
 
-  url: InputSignal<string>  = input.required<string>();
+  gif: InputSignal<Gif>  = input.required<Gif>();
 }

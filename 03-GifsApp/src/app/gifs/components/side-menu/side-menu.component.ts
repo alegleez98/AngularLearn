@@ -8,4 +8,4 @@ import { SideMenuHeaderComponent } from './side-menu-header/side-menu-header.com
   templateUrl: './side-menu.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GifsSideMenuComponent { }
+export class GifsSideMenuComponent {}
