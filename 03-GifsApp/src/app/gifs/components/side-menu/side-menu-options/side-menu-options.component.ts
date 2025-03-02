@@ -1,5 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { GifsService } from 'src/app/gifs/services/Gifs.service';
 
 interface MenuOption {
   label: string;
@@ -10,11 +12,13 @@ interface MenuOption {
 
 @Component({
   selector: 'gifs-side-menu-options',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, CommonModule],
   templateUrl: './side-menu-options.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SideMenuOptionsComponent {
+
+  gifService: GifsService = inject(GifsService);
 
   menuOptions:MenuOption[] = [
     {
