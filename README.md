@@ -11,7 +11,7 @@ Hola, estos son los apuntes y código sobre el curso de Angular de fernando Herr
     - Tenemos tipado estricto y errores en momento de escritura.
     - Nos permite la inyección de dependencias.
 
-# Sección 3: Bases de TypeScript
+## Sección 3: Bases de TypeScript
 Este es un breve listado de los temas fundamentales:
 
     - Introducción a TypeScript
@@ -27,7 +27,7 @@ Este es un breve listado de los temas fundamentales:
 
 La idea de esta sección no es hacerlos expertos en TypeScript, pero sí irnos acostumbrando a la sintaxis y el tipado estricto de datos.
 
-# Sección 4: Angular
+## Sección 4: Angular
 En esta sección aprenderemos sobre:
 
     - Señales
@@ -40,7 +40,7 @@ En esta sección aprenderemos sobre:
     - Cada archivo y directorio de un proyecto
 
 El objetivo es tener una introducción a conceptos básicos y algunos no tan básicos de Angular, para comenzar a familiarizarnos y aprender esta tecnología.
-# Sección 5: Expandir bases
+## Sección 5: Expandir bases
 En esta sección veremos:
 
     - RouterLink
@@ -59,7 +59,7 @@ En esta sección veremos:
 
 Es una sección bastante completa que nos ayudará mucho a comprender el funcionamiento de Angular.
 
-# Sección 6: GifsApp - Pensemos en componentes
+## Sección 6: GifsApp - Pensemos en componentes
 Esta sección es muy importante porque nos dará las bases de lo que es trabajar en Angular diariamente.
 Puntualmente veremos:
 
@@ -77,7 +77,7 @@ Puntualmente veremos:
 
 La idea es ir creando un pequeño dashboard administrativo para mostrar Gifs que traeremos desde un API, aunque eso es tema de la siguiente sección, aquí empezaremos a dejar las bases y la estructura del mismo.
 
-# Sección 7: Aplicación de Gifs
+## Sección 7: Aplicación de Gifs
 Esta sección es muy interesante porque aprenderemos:
 
     - Manejo de rutas dinámicas
@@ -89,3 +89,13 @@ Esta sección es muy interesante porque aprenderemos:
     - Mapeo de información
 
 Esta sección nos encaminará a prepararnos fuertemente en el manejo de estado de nuestra aplicación.
+
+## Sección 8: Gifs Intermedio/Avanzado
+Esta sección es opcional pero recomendada a las personas que quieran profundizar un poco más en Angular.
+
+Puntualmente veremos:
+
+    - Preservar estado del scroll
+    - Hacer scroll infinito
+    - Diseño masonry
+    - Técnicas y herramientas para depurar
