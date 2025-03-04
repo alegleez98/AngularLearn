@@ -11,6 +11,8 @@ export class CountryMapper {
       flagSvg: restCountry.flags.svg,
       population: restCountry.population,
       name: restCountry.translations['spa'].common ?? 'No Spanish name',
+      region: restCountry.region,
+      subRegion: restCountry.subregion,
     };
     return country;
   }
