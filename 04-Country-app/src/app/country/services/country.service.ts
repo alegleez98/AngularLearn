@@ -40,4 +40,17 @@ export class CountryService {
       );
   }
 
+  searchByCountryByAlphaCode(code: string) {
+    console.log(code);
+    return this.http.get<RESTCountry[]>(`${API_URL}/alpha/${code}`)
+      .pipe(
+        map((restCountries) => CountryMapper.mapRestCountryArrayToCountryArray(restCountries)),
+        map( countries => countries.at(0)),
+        catchError((error) => {
+          console.log('Error fetching ', error);
+          return throwError(() => new Error(`No se pudieron obtener un pais con ese código: ${code}`));
+        }),
+      );
+  }
+
 }
