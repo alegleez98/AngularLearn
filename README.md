@@ -99,3 +99,15 @@ Puntualmente veremos:
     - Hacer scroll infinito
     - Diseño masonry
     - Técnicas y herramientas para depurar
+
+## Sección 9: Country SPA
+En esta sección aprenderemos y reforzaremos temas como:
+
+    - Rutas hijas
+    - Rutas Anidadas
+    - Creación y comunicación entre componentes
+    - Tailwind y DaisyUI
+    - Archivo de rutas por feature / module
+    - Carga perezosa de módulos de rutas
+
+El objetivo es armar la aplicación que luego haremos funcionar.
