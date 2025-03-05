@@ -111,3 +111,17 @@ En esta sección aprenderemos y reforzaremos temas como:
     - Carga perezosa de módulos de rutas
 
 El objetivo es armar la aplicación que luego haremos funcionar.
+
+## Sección 10: Country SPA Funcionalidad
+En esta sección aprenderemos a trabajar con:
+
+    - Recursos como:
+        - Resources
+        - rxResources
+    - Señales
+    - Servicios
+    - Reutilización de componentes
+    - Peticiones http
+    - Operadores de RXJS
+
+La idea es hacer funcionar nuestra aplicación
