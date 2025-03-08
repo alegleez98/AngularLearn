@@ -127,7 +127,7 @@ En esta sección aprenderemos a trabajar con:
 La idea es hacer funcionar nuestra aplicación
 
 ## Sección 11: Country SPA Intermedio/Avanzado
-Esta es una sección recomendada intermedia, aquí aprenderemos a manejar el caché manual de los resultados, hacer filtros y preservar la información basado en query parameters que vienen desde el URL
+Esta es una sección recomendada intermedia, aquí aprenderemos a manejar el caché manual de los resultados, hacer filtros y preservar la información basado en query parameters que vienen desde el URL.
 
 Puntualmente veremos:
 
