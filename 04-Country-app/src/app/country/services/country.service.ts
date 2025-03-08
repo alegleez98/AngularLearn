@@ -16,6 +16,7 @@ export class CountryService {
 
   private queryCacheCapital = new Map<string, Country[]>();
   private queryCacheCountry = new Map<string,Country[]>();
+  private queryCacheRegion = new Map<string,Country[]>();
 
 
   searchByCapital( query: string ): Observable<Country[]> {
@@ -44,6 +45,23 @@ export class CountryService {
         map((restCountries) => CountryMapper.mapRestCountryArrayToCountryArray(restCountries)),
         tap(countries => this.queryCacheCountry.set(query,countries)),
         delay(3000),
+        catchError((error) => {
+          console.log('Error fetching ', error);
+          return throwError(() => new Error(`No se pudieron obtener paises con ese query: ${query}`));
+        }),
+      );
+  }
+
+  searchByRegion(query: string) {
+    query = query.toLowerCase();
+    console.log(query);
+    if(this.queryCacheRegion.has(query)) {
+      return of(this.queryCacheRegion.get(query)!);
+    }
+    return this.http.get<RESTCountry[]>(`${API_URL}/region/${query}`)
+      .pipe(
+        map((restCountries) => CountryMapper.mapRestCountryArrayToCountryArray(restCountries)),
+        tap(countries => this.queryCacheRegion.set(query,countries)),
         catchError((error) => {
           console.log('Error fetching ', error);
           return throwError(() => new Error(`No se pudieron obtener paises con ese query: ${query}`));
