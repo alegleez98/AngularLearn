@@ -1,1 +1,19 @@
-<p>basic-page works!</p>,
+<div class="stats stats-vertical lg:stats-horizontal shadow w-full">
+  <div class="stat">
+    <div class="stat-title">Lowercase Pipe</div>
+    <div class="stat-value">{{nameUpper() | lowercase}}</div>
+    <div class="stat-desc">{{nameUpper()}}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">Uppercase Pipe</div>
+    <div class="stat-value">{{nameLower() | uppercase}}</div>
+    <div class="stat-desc">{{nameLower()}}</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-title">TitleCase Pipe</div>
+    <div class="stat-value">{{fullName() | titlecase}}</div>
+    <div class="stat-desc">{{fullName()}}</div>
+  </div>
+</div>
