@@ -136,3 +136,23 @@ Puntualmente veremos:
     - QueryParameters
     - Configuraciones
     - Debounce
+
+## Sección 12: Pipes
+En esta sección estaremos trabajando con los pipes que ya vienen incluidos en Angular y su configuración, también pasaremos por la internacionalización en caso de requerir cambiar de idiomas.
+
+Puntualmente veremos:
+    - DatePipe
+    - UpperCasePipe
+    - LowerCasePipe
+    - TitleCasePipe
+    - CurrencyPipe
+    - DecimalPipe
+    - PercentPipe
+    - i18nPluralPipe
+    - i18nSelectPipe
+    - JsonPipe
+    - KeyValuePipe
+    - SlicePipe
+    - AsyncPipe
+
+Configuraciones de internacionalización de Pipes y Aplicación
