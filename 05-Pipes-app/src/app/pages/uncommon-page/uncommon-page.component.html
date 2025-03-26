@@ -62,5 +62,14 @@
      } @else {
       <p class="text-accent"> Espere por favor ...</p>
      }
+
+
+     <h3 class="text-2xl">Observable</h3>
+
+     @if( promiseValue | async; as value) {
+      <p> Valor: {{ value }}</p>
+     } @else {
+      <p> Esperando primer valor...</p>
+     }
   </app-card>
 </div>
