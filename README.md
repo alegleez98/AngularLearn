@@ -185,3 +185,23 @@ Puntualmente veremos:
     - NgSubmit
     - Clases utilitarias
     - Validaciones básicas pre-fabricadas
+
+## Sección 15: Formularios Reactivos
+En esta sección continuaremos los formularios reactivos tocando temas de:
+
+    - Validaciones personalizadas
+        - Síncronas
+        - Asíncronas
+    - Validaciones con
+        - Patrones
+        - Expresiones regulares
+        - Palabras en concreto
+    - Selectores
+    - Checkboxes
+    - Radios
+    - Peticiones HTTP en secuencai
+    - Suscripciones de cambios de los campos del formulario
+    - Limpieza de suscripciones
+    - Operadores de RXJS útiles
+
+Es una sección muy completa que les ayudará a poder manejar los formularios de una forma efectiva mientras aprendemos sobre operadores y funciones de RXJS.
