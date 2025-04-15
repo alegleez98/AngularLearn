@@ -175,22 +175,13 @@ En esta sección trabajaremos con los formularios reactivos de Angular, los cual
 
 Puntualmente veremos:
 
-Reactive Forms Module en Standalone components
-
-Form Builder
-
-FormControls
-
-FormArrays
-
-Controles dinámicos
-
-Formularios reactivos
-
-Campos reactivos fuera de formularios
-
-NgSubmit
-
-Clases utilitarias
-
-Validaciones básicas pre-fabricadas
+    - Reactive Forms Module en Standalone components
+    - Form Builder
+    - FormControls
+    - FormArrays
+    - Controles dinámicos
+    - Formularios reactivos
+    - Campos reactivos fuera de formularios
+    - NgSubmit
+    - Clases utilitarias
+    - Validaciones básicas pre-fabricadas
