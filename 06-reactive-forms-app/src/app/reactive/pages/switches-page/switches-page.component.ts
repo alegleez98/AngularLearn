@@ -19,6 +19,12 @@ export class SwitchesPageComponent {
   });
 
   onSubmit() {
+    if ( this.myForm.invalid) {
+      this.myForm.markAllAsTouched();
+      return;
+    }
+
+    this.myForm.reset();
     console.log(this.myForm);
   }
 
