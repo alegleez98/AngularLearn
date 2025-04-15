@@ -1,6 +1,6 @@
 import { JsonPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormUtils } from '../../../utils/form-utils';
 
 @Component({
@@ -19,7 +19,12 @@ export class RegisterPageComponent {
     username: ['', [Validators.required, Validators.minLength(6), Validators.pattern(this.formUtils.notOnlySpacesPattern)]],
     password: ['', [Validators.required, Validators.minLength(6)]],
     password2: ['', Validators.required],
+  }, {
+    validators: [ //Se añaden aquí tus propias validaciones a nivel de formulario
+      this.formUtils.isFieldOneEqualsFieldTwo('password', 'password2')
+    ]
   });
+
 
 
   onSubmit() {

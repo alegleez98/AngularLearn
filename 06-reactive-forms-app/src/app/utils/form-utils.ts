@@ -1,4 +1,4 @@
-import { FormArray, FormGroup, ValidationErrors } from "@angular/forms";
+import { AbstractControl, FormArray, FormGroup, ValidationErrors } from "@angular/forms";
 
 
 
@@ -25,7 +25,6 @@ export class FormUtils {
             return 'El valor ingresado no tiene el formato de un correo electrónico';
           }
           return 'Error de patrón contra expesión regular';
-          break;
         default:
           return `Error de validación no controlado ${key}`
       }
@@ -48,6 +47,14 @@ export class FormUtils {
     if (form.controls.length === 0) return null;
     const errors = form.controls[indexArray].errors ?? {};
     return this.getTextErrors(errors);
+  }
+
+  static isFieldOneEqualsFieldTwo( field1: string, field2: string) {
+    return (formGroup: AbstractControl) => {
+      const field1Value = formGroup.get(field1)?.value;
+      const field2Value = formGroup.get(field2)?.value;
+      return field1Value === field2Value ? null : { passwordsNotEqual: true }
+    }
   }
 
   static isValidFieldInArray( FormArray: FormArray, index: number) {
