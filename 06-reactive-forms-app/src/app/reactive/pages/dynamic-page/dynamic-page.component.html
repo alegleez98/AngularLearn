@@ -28,6 +28,7 @@
           placeholder="Agregar favorito"
           [formControl]="newFavourite"
           (keydown.enter)="onAddToFavourite()"
+          (keydown.enter)="$event.preventDefault()"
         >
 
 
@@ -91,5 +92,5 @@
 <br>
 
 <span>Agregar Juego</span>
- <pre>{{ myForm.controls['favoriteGames'].errors | json }}</pre>
-<pre>{{ myForm | json }}</pre>
+ <!-- <pre>{{ myForm.controls['favoriteGames'].errors | json }}</pre>
+<pre>{{ myForm | json }}</pre> -->
