@@ -213,3 +213,15 @@ Puntualmente veremos:
     - Todos los pasos del ciclo de vida tradicional
     - Nuevos hooks basados en señales
     - Ciclo de vida cuando cambian inputs (comunicación entre componentes)
+
+## Sección 17: Mapas
+En esta sección aprenderemos a trabajar con:
+    - Mapas
+        - A pantalla completa
+        - Como componete individual
+        - Marcadores y señales
+    - Variables de entorno .env
+    - Scripts de Node
+    - Despliegues
+
+La idea es que puedan en Angular, asimilar un paquete externo y utilizarlo a su voluntad.
