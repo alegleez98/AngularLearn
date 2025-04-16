@@ -205,3 +205,11 @@ En esta sección continuaremos los formularios reactivos tocando temas de:
     - Operadores de RXJS útiles
 
 Es una sección muy completa que les ayudará a poder manejar los formularios de una forma efectiva mientras aprendemos sobre operadores y funciones de RXJS.
+
+## Sección 16: Life Hooks 
+En esta sección vamos a trabajar con el ciclo de vida de los componentes de Angular, esto incluye otros hooks o funciones que son disparadas ppr Angular en un momento determinado del tiempo.
+
+Puntualmente veremos:
+    - Todos los pasos del ciclo de vida tradicional
+    - Nuevos hooks basados en señales
+    - Ciclo de vida cuando cambian inputs (comunicación entre componentes)
