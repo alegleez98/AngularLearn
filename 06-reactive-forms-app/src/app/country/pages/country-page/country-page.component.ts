@@ -1,9 +1,9 @@
-import { Country } from './../../../../../../04-Country-app/src/app/country/interfaces/country.interface';
 import { JsonPipe } from '@angular/common';
-import { JsonpClientBackend } from '@angular/common/http';
-import { Component, inject, signal } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CountryService } from '../../country.service';
+import { Subscription, switchMap, tap } from 'rxjs';
+import { Country } from '../../interfaces/country.interface';
 
 @Component({
   selector: 'app-country-page',
@@ -21,8 +21,31 @@ export class CountryPageComponent {
     region: ['', Validators.required],
     country: ['', Validators.required],
     border: ['', Validators.required]
-  })
+  });
 
+  onFormChanged = effect( ( onCleanup ) => {
+    const regionSuscription = this.onRegionChanged();
 
+    onCleanup(() => {
+      regionSuscription.unsubscribe();
+    })
+  });
+
+  onRegionChanged(): Subscription {
+    return this.myForm.get('region')!.valueChanges
+      .pipe(
+        tap(() => {
+           this.myForm.get('country')!.setValue('');
+           this.myForm.get('border')!.setValue('');
+           this.borders.set([]);
+           this.countriesByRegion.set([]);
+          }),
+          switchMap((region) => this.countryService.getCountriesByRegion(region ?? ''))
+    )
+    .subscribe((countries) => {
+      this.countriesByRegion.set(countries);
+      console.log({countries});
+    });
+  }
 
 }
