@@ -28,6 +28,8 @@ export class FormUtils {
           return `El valor ingresado no es un correo electronico`
         case 'emailTaken':
           return 'El correo electronico ya está siendo usado por otro usuario'
+        case 'usernameTaken':
+          return 'El nombre de usuario ya está siendo usado por otro usuario'
         case 'pattern':
           if ( errors['pattern'].requiredPattern === FormUtils.emailPattern) {
             return 'El valor ingresado no tiene el formato de un correo electrónico';
@@ -78,6 +80,17 @@ export class FormUtils {
     if( formValue === 'hola@mundo.com') {
       return {
         emailTaken: true,
+      };
+    }
+    return null;
+  }
+
+  static notStrider(control: AbstractControl):ValidationErrors | null {
+    console.log('Validando síncrono')
+    const formValue = control.value;
+    if( formValue === 'strider') {
+      return {
+        usernameTaken: true,
       };
     }
     return null;
