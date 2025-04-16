@@ -1,4 +1,5 @@
 import { afterNextRender, afterRender, Component, effect, OnChanges, OnInit, signal } from '@angular/core';
+import { TitleComponent } from '../../components/navbar/titleComponent/title.component';
 
 const log = (...messages:string[]) => {
   console.log(`${messages[0]} %c${ messages.slice(1).join(', ') } ` , 'color: #bada55');
@@ -6,7 +7,7 @@ const log = (...messages:string[]) => {
 
 @Component({
   selector: 'app-home-page',
-  imports: [],
+  imports: [ TitleComponent],
   templateUrl: './home-page.component.html',
 })
 export class HomePageComponent implements OnInit, OnChanges {
