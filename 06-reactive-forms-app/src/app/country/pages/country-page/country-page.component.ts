@@ -62,6 +62,7 @@ export class CountryPageComponent {
         switchMap((country) => this.countryService.getCountryNamesByCodeArray(country.borders))
     )
     .subscribe((borders) => {
+      this.borders.set(borders);
       console.log({borders});
     });
   }
