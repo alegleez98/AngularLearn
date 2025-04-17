@@ -225,3 +225,15 @@ En esta sección aprenderemos a trabajar con:
     - Despliegues
 
 La idea es que puedan en Angular, asimilar un paquete externo y utilizarlo a su voluntad.
+## Sección 18: TesloShop Aplicación administrativa
+En esta sección estaremos dejando las bases para el ejercicio final en el cual estaremos trabajando, la idea es crear una aplicación real completa en Angular, esta aplicación servirá para utilizar el framework como lo usarán allá afuera en el mundo laboral.
+
+Puntualmente veremos:
+    - Separación por feature module
+    - TailwindCSS y DaisyUI
+    - Assets estáticos como imágenes y fuentes
+    - Un poco de Docker
+    - Peticiones HTTP
+    - Variables de entorno
+    - Pipes personalizados en acción
+    - Señales y recursos (rxResources)
