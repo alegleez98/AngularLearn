@@ -1,7 +1,7 @@
 <div class="card bg-base-100 shadow-sm animate-fade-in-scale">
   <figure>
     <img
-      src="http://localhost:3000/api/files/product/{{ product().images[0]}}"
+      src="{{product().images | productImage}}"
       alt="{{product().title}}" />
   </figure>
   <div class="card-body">
