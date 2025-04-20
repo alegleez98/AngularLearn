@@ -237,3 +237,11 @@ Puntualmente veremos:
     - Variables de entorno
     - Pipes personalizados en acción
     - Señales y recursos (rxResources)
+
+## Sección 19: Paginación
+Esta sección es relativamente pequeña y aprenderemos sobre:
+
+    - Paginación via URL
+    - Re-utilización de componentes y servicios
+    - Caché de productos y producto
+    - Organización de archivos y directorios
