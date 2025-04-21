@@ -245,3 +245,15 @@ Esta sección es relativamente pequeña y aprenderemos sobre:
     - Re-utilización de componentes y servicios
     - Caché de productos y producto
     - Organización de archivos y directorios
+
+## Sección 20: Autenticación y autorización
+En esta sección aprenderemos a:
+
+    - Crear un login basado en JWTs
+    - Guards
+    - Interceptores
+    - Autenticar peticiones
+    - Controlar quien puede ver una ruta o no
+    - Usar el principio DRY
+
+La idea es crear un método de login real para que aprendamos los diferentes conceptos necesarios para validar el control de acceso a los recursos de nuestra aplicación.
