@@ -210,12 +210,14 @@ Es una sección muy completa que les ayudará a poder manejar los formularios de
 En esta sección vamos a trabajar con el ciclo de vida de los componentes de Angular, esto incluye otros hooks o funciones que son disparadas ppr Angular en un momento determinado del tiempo.
 
 Puntualmente veremos:
+
     - Todos los pasos del ciclo de vida tradicional
     - Nuevos hooks basados en señales
     - Ciclo de vida cuando cambian inputs (comunicación entre componentes)
 
 ## Sección 17: Mapas
 En esta sección aprenderemos a trabajar con:
+
     - Mapas
         - A pantalla completa
         - Como componete individual
@@ -229,6 +231,7 @@ La idea es que puedan en Angular, asimilar un paquete externo y utilizarlo a su 
 En esta sección estaremos dejando las bases para el ejercicio final en el cual estaremos trabajando, la idea es crear una aplicación real completa en Angular, esta aplicación servirá para utilizar el framework como lo usarán allá afuera en el mundo laboral.
 
 Puntualmente veremos:
+
     - Separación por feature module
     - TailwindCSS y DaisyUI
     - Assets estáticos como imágenes y fuentes
