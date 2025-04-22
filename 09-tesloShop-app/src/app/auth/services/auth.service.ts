@@ -49,6 +49,17 @@ export class AuthService {
     );
   }
 
+  register(email:string, password:string, fullName:string) {
+    return this.http.post<AuthResponse>(`${baseUrl}/auth/register`, {
+      email: email,
+      password: password,
+      fullName: fullName
+    }).pipe(
+      map(resp => this.handleAuthSuccess(resp)),
+      catchError((error: any) => this.handleAuthError(error))
+    );
+  }
+
   checkStatus():Observable<boolean> {
     const token = localStorage.getItem('token');
     if ( !token) {
@@ -57,9 +68,6 @@ export class AuthService {
     }
 
     return this.http.get<AuthResponse>(`${baseUrl}/auth/check-status`, {
-      // headers: {
-      //   Authorization: `Bearer ${token}`,
-      // }
     }).pipe(
       map(resp => this.handleAuthSuccess(resp)),
       catchError((error: any) => this.handleAuthError(error))
@@ -73,7 +81,7 @@ export class AuthService {
     this._token.set(null);
     this._authStatus.set('not-authenticated');
 
-    //localStorage.removeItem('token');
+    localStorage.removeItem('token');
   }
 
   private handleAuthSuccess( resp: AuthResponse) {
