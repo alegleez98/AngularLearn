@@ -2,6 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { single } from 'rxjs';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -11,6 +12,7 @@ import { single } from 'rxjs';
 export class LoginPageComponent {
 
   fb = inject(FormBuilder);
+  authService = inject(AuthService);
   hasError = signal(false);
   isPosting = signal(false);
 
@@ -30,7 +32,9 @@ export class LoginPageComponent {
 
     const { email = '' , password = ''} = this.loginForm.value;
 
-    console.log({email, password});
+    this.authService.login(email!, password!).subscribe(resp => {
+      console.log(resp);
+    });
 
   }
 
