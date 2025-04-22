@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { AuthResponse } from '@auth/interfaces/auth-response';
 import { User } from '@auth/interfaces/user.interface';
-import { tap } from 'rxjs';
+import { catchError, map, of, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 type AuthStatus = 'checking' | 'authenticated' | 'not-authenticated';
@@ -43,9 +43,15 @@ export class AuthService {
         this._user.set(resp.user);
         this._token.set(resp.token);
         this._authStatus.set('authenticated');
-
         localStorage.setItem('token', resp.token);
       }),
+      map(() => true),
+      catchError((error: any) => {
+        this._user.set(null);
+        this._token.set(null);
+        this._authStatus.set('not-authenticated');
+        return of(false);
+      })
     );
   }
 
