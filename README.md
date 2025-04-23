@@ -257,3 +257,18 @@ En esta sección aprenderemos a:
     - Usar el principio DRY
 
 La idea es crear un método de login real para que aprendamos los diferentes conceptos necesarios para validar el control de acceso a los recursos de nuestra aplicación.
+
+## Sección 21: Panel administrativo
+En esta sección crearemos un panel administrativo para mostrar y darle mantenimiento a nuestros productos.
+
+Puntualmente veremos temas como:
+
+    - Autorización
+    - Formularios reactivos
+    - Control del formulario
+    - Validaciones
+    - Posteos para crear productos
+    - Patch para actualizar productos
+    - Paginación
+    - RxResource con otros argumentos
+    - Manejo de caché
