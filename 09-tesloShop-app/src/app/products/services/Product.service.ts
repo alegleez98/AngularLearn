@@ -59,8 +59,8 @@ export class ProductService {
     );
   }
 
-  updateProduct(productLike: Partial<Product>) {
-
+  updateProduct(id: string, productLike: Partial<Product>):Observable<Product> {
+    return this.http.patch<Product>(`${BASE_URL}/products/${id}`, productLike)
   }
 
   constructor() { }
