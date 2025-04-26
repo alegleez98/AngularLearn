@@ -4,10 +4,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '@products//interfaces/product.interface';
 import { ProductService } from '@products//services/Product.service';
 import { map } from 'rxjs';
+import { ProductDetailsComponent } from "./product-details/product-details.component";
 
 @Component({
   selector: 'app-product-admin-page',
-  imports: [],
+  imports: [ProductDetailsComponent],
   templateUrl: './product-admin-page.component.html',
 })
 export class ProductAdminPageComponent {
