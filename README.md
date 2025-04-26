@@ -260,7 +260,6 @@ En esta sección aprenderemos a:
     - Usar el principio DRY
 
 La idea es crear un método de login real para que aprendamos los diferentes conceptos necesarios para validar el control de acceso a los recursos de nuestra aplicación.
-<<<<<<< HEAD
 
 ## Sección 21: Panel administrativo
 En esta sección crearemos un panel administrativo para mostrar y darle mantenimiento a nuestros productos.
@@ -276,5 +275,20 @@ Puntualmente veremos temas como:
     - Paginación
     - RxResource con otros argumentos
     - Manejo de caché
-=======
->>>>>>> 8b1a841b6a8b182dcd327a72beb30887b19ec5a2
+
+## Sección 22: Carga de archivos y despliegues
+En esta sección vamos a aprender a cargar imágenes y colocar vistas previas sin subirlo a ningún lugar, pero también desplegaremos todo a internet.
+
+Puntualmente veremos:
+
+    - Carga de imágenes
+    - Vista previa de las mismas
+    - QuerySelector basado en ViewChild
+    - ForkJoin
+    - SwitchMap
+    - Operadores de RXJS en acción
+    - Caché
+    - Despliegues
+    - NeonTech
+    - Render
+    - Netlify
