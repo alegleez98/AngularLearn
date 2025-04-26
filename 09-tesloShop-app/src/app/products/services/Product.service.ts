@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable, of, tap } from 'rxjs';
+import { forkJoin, map, Observable, of, tap, switchMap } from 'rxjs';
 import { Gender, Product, ProductsResponse } from '../interfaces/product.interface';
 import { environment } from 'src/environments/environment';
 import { User } from '@auth/interfaces/user.interface';
@@ -13,7 +13,7 @@ interface Options {
   gender?: string;
 }
 
-const emptyProduct:Product = {
+const emptyProduct: Product = {
   id: 'new',
   title: '',
   price: 0,
@@ -39,7 +39,7 @@ export class ProductService {
   getProducts(options: Options): Observable<ProductsResponse> {
     const { limit = 9, offset = 9, gender = '' } = options;
     const key = `${limit}-${offset}-${gender}`;
-    if ( this.productsCache.has(key)) {
+    if (this.productsCache.has(key)) {
       return of(this.productsCache.get(key)!);
     }
     return this.http.get<ProductsResponse>(`${BASE_URL}/products`, {
@@ -65,7 +65,7 @@ export class ProductService {
   }
 
   getProductsById(id: string): Observable<Product> {
-    if(id === 'new') {
+    if (id === 'new') {
       return of(emptyProduct);
     }
     if (this.productCache.has(id)) {
@@ -77,27 +77,63 @@ export class ProductService {
     );
   }
 
-  updateProduct(id: string, productLike: Partial<Product>):Observable<Product> {
-    return this.http.patch<Product>(`${BASE_URL}/products/${id}`, productLike).pipe(
+  updateProduct(id: string, productLike: Partial<Product>, imageFileList: FileList | undefined): Observable<Product> {
+
+    const currentImages = productLike.images ?? []
+
+    return this.uploadImages(imageFileList).pipe(
+      map(imagesNames => ({
+        ...productLike,
+        images: [...currentImages, ...imagesNames]
+      })),
+      switchMap((updateProduct) => {
+        return this.http.patch<Product>(`${BASE_URL}/products/${id}`, updateProduct)
+      }),
       tap((product) => this.updateProductCache(product))
-    )
+    );
   }
 
   updateProductCache(product: Product) {
     const productId = product.id;
     this.productCache.set(productId, product);
 
-    this.productsCache.forEach( productResponse => {
+    this.productsCache.forEach(productResponse => {
       productResponse.products = productResponse.products.map((currentProduct) => {
         return currentProduct.id === productId ? product : currentProduct;
       })
     })
   }
 
-  createProduct(productLike: Partial<Product>):Observable<Product> {
-    return this.http.post<Product>(`${BASE_URL}/products`, productLike).pipe(
+  createProduct(productLike: Partial<Product>, imageFileList: FileList | undefined): Observable<Product> {
+
+    const currentImages = productLike.images ?? []
+
+    return this.uploadImages(imageFileList).pipe(
+      map(imagesNames => ({
+        ...productLike,
+        images: [...currentImages, ...imagesNames]
+      })),
+      switchMap((updateProduct) => {
+        return this.http.post<Product>(`${BASE_URL}/products`, updateProduct)
+      }),
       tap((product) => this.updateProductCache(product))
-    )
+    );
+  }
+
+  uploadImages(images?: FileList): Observable<string[]> {
+    if (!images) return of([]);
+
+    const uploadObservables = Array.from(images).map(imageFile => this.uploadImage(imageFile));
+
+    return forkJoin(uploadObservables);
+  }
+
+  uploadImage(imageFile: File): Observable<string> {
+    const formData = new FormData();
+    formData.append('file', imageFile);
+    return this.http.post<{ fileName: string }>(`${BASE_URL}/files/product`, formData).pipe(
+      map(resp => resp.fileName)
+    );
   }
 
   constructor() { }
