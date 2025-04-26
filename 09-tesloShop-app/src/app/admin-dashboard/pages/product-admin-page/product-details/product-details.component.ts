@@ -4,6 +4,7 @@ import { ProductCarouselComponent } from "../../../../store-front/components/pro
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormUtils } from '@utils/form-utils';
 import { FormErrorLabelComponent } from "../../../../shared/components/form-error-label/form-error-label.component";
+import { ProductService } from '@products/services/Product.service';
 
 @Component({
   selector: 'product-details',
@@ -15,6 +16,7 @@ export class ProductDetailsComponent implements OnInit {
   product = input.required<Product>();
 
   fb = inject(FormBuilder);
+  productService = inject(ProductService);
 
   productForm = this.fb.group({
     title: ['', Validators.required],
@@ -52,7 +54,22 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.productForm.value);
+    const isValid = this.productForm.valid;
+    this.productForm.markAllAsTouched();
+    if (!isValid) return;
+
+    const formValue = this.productForm.value;
+
+    const productLike: Partial<Product> = {
+      ...(formValue as any),
+      tags: formValue.tags?.toLowerCase().split(',').map( tag => tag.trim() ?? []),
+    }
+
+    this.productService.updateProduct(productLike);
+
+
+
+    console.log(productLike);
   }
 
 

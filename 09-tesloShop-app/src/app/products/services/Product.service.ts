@@ -59,6 +59,10 @@ export class ProductService {
     );
   }
 
+  updateProduct(productLike: Partial<Product>) {
+
+  }
+
   constructor() { }
 
 }
