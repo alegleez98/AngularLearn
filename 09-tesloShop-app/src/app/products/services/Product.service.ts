@@ -49,6 +49,16 @@ export class ProductService {
     );
   }
 
+  getProductsById(id: string): Observable<Product> {
+    if (this.productCache.has(id)) {
+      return of(this.productCache.get(id)!);
+    }
+    return this.http.get<Product>(`${BASE_URL}/products/${id}`).pipe(
+      tap((resp) => console.log(resp)),
+      tap((resp) => this.productCache.set(id, resp))
+    );
+  }
+
   constructor() { }
 
 }
