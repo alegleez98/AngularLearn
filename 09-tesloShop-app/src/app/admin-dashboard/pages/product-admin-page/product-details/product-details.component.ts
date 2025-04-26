@@ -21,6 +21,7 @@ export class ProductDetailsComponent implements OnInit {
   router = inject(Router);
   productService = inject(ProductService);
   wasSaved = signal(false);
+  tempImages = signal<string[]>([]);
 
   productForm = this.fb.group({
     title: ['', Validators.required],
@@ -80,6 +81,13 @@ export class ProductDetailsComponent implements OnInit {
     setTimeout(() => {
       this.wasSaved.set(false);
     }, 3000);
+  }
+
+  onFilesChanged( event: Event) {
+    const fileList = ( event.target as HTMLInputElement).files;
+
+    const imageUrls = Array.from(fileList ?? []).map( file => URL.createObjectURL(file));
+    this.tempImages.set(imageUrls);
   }
 
 }
